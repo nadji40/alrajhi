@@ -39,43 +39,60 @@ Complete REST API integration guide for Al Rajhi Bank Payment Gateway. Build sec
   :::
 
 #default
-  :::prose-pre
-  ---
-  code: |
-    <?php
-    // Initialize ARB Payment Gateway
-    $gateway = new ARBPaymentGateway([
-        'tranportal_id' => 'your_tranportal_id',
-        'resource_key' => 'your_resource_key',
-        'environment' => 'sandbox' // or 'production'
-    ]);
+      :::prose-pre
+      ---
+      code: |
+        <?php
+        // ARB Payment Gateway Integration (Real Example)
+        
+        // Step 1: Prepare transaction data
+        $trandata = [
+            "amt" => "100.00",
+            "action" => "1",  // Purchase
+            "password" => "YOUR_TRANPORTAL_PASSWORD",
+            "id" => "YOUR_TRANPORTAL_ID",
+            "currencyCode" => "682",  // SAR
+            "trackId" => "ORDER_" . time(),
+            "responseURL" => "https://yoursite.com/callback.php"
+        ];
 
-    // Create payment token
-    $response = $gateway->createPaymentToken([
-        'amt' => '100.00',
-        'currency' => 'SAR',
-        'action' => '1',
-        'responseURL' => 'https://yoursite.com/callback'
-    ]);
-  filename: payment-integration.php
-  ---
+        // Step 2: Encrypt using AES-256-CBC
+        $encrypted = arbEncrypt($trandata, "YOUR_RESOURCE_KEY");
 
-  ```php [payment-integration.php]
-  <?php
-  // Initialize ARB Payment Gateway
-  $gateway = new ARBPaymentGateway([
-      'tranportal_id' => 'your_tranportal_id',
-      'resource_key' => 'your_resource_key',
-      'environment' => 'sandbox' // or 'production'
-  ]);
+        // Step 3: Send to ARB Payment Gateway
+        $request = [
+            "id" => "YOUR_TRANPORTAL_ID",
+            "trandata" => $encrypted,
+            "responseURL" => "https://yoursite.com/callback.php"
+        ];
+      filename: arb-integration.php
+      ---
 
-  // Create payment token
-  $response = $gateway->createPaymentToken([
-      'amt' => '100.00',
-      'currency' => 'SAR',
-      'action' => '1',
-      'responseURL' => 'https://yoursite.com/callback'
-  ]);
+      ```php [arb-integration.php]
+      <?php
+      // ARB Payment Gateway Integration (Real Example)
+      
+      // Step 1: Prepare transaction data
+      $trandata = [
+          "amt" => "100.00",
+          "action" => "1",  // Purchase
+          "password" => "YOUR_TRANPORTAL_PASSWORD",
+          "id" => "YOUR_TRANPORTAL_ID",
+          "currencyCode" => "682",  // SAR
+          "trackId" => "ORDER_" . time(),
+          "responseURL" => "https://yoursite.com/callback.php"
+      ];
+
+      // Step 2: Encrypt using AES-256-CBC
+      $encrypted = arbEncrypt($trandata, "YOUR_RESOURCE_KEY");
+
+      // Step 3: Send to ARB Payment Gateway
+      $request = [
+          "id" => "YOUR_TRANPORTAL_ID",
+          "trandata" => $encrypted,
+          "responseURL" => "https://yoursite.com/callback.php"
+      ];
+      ```
   ```
   :::
 ::
