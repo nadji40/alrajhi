@@ -1,7 +1,7 @@
 ---
 seo:
-  title: Nuxt Docs Template
-  description: Create stunning, fast and SEO-optimized documentation sites with Nuxt UI.
+  title: Al Rajhi Bank Payment Gateway Documentation
+  description: Comprehensive REST API integration guide for Al Rajhi Bank Payment Gateway with PHP examples and implementation details.
 ---
 
 ::u-page-hero{class="dark:bg-gradient-to-b from-neutral-900 to-neutral-950"}
@@ -12,188 +12,88 @@ orientation: horizontal
 :hero-background
 
 #title
-Ship Beautiful [Documentation]{.text-primary}.
+Al Rajhi Bank [Payment Gateway]{.text-primary} Documentation
 
 #description
-Build professional documentation with Nuxt UI's powerful components, enhanced typography, and seamless Nuxt Content integration. The same system trusted by the entire [Nuxt ecosystem](https://nuxt.com).
+Complete REST API integration guide for Al Rajhi Bank Payment Gateway. Build secure, PCI-DSS compliant payment solutions with comprehensive PHP examples, detailed transaction flows, and professional implementation guidance.
 
 #links
   :::u-button
   ---
-  to: /getting-started
+  to: /introduction
   size: xl
   trailing-icon: i-lucide-arrow-right
   ---
-  Get started
+  Get Started
   :::
 
   :::u-button
   ---
-  icon: i-simple-icons-github
+  icon: i-lucide-download
   color: neutral
   variant: outline
   size: xl
-  to: https://github.com/nuxt-ui-templates/docs
-  target: _blank
+  to: /getting-started/test-instruments
   ---
-  Use this template
+  Test Credentials
   :::
 
 #default
   :::prose-pre
   ---
   code: |
-    export default defineNuxtConfig({
-      modules: [
-        '@nuxt/ui',
-        '@nuxt/content',
-        'nuxt-og-image',
-        'nuxt-llms'
-      ],
+    <?php
+    // Initialize ARB Payment Gateway
+    $gateway = new ARBPaymentGateway([
+        'tranportal_id' => 'your_tranportal_id',
+        'resource_key' => 'your_resource_key',
+        'environment' => 'sandbox' // or 'production'
+    ]);
 
-      css: ['~/assets/css/main.css']
-    })
-  filename: nuxt.config.ts
+    // Create payment token
+    $response = $gateway->createPaymentToken([
+        'amt' => '100.00',
+        'currency' => 'SAR',
+        'action' => '1',
+        'responseURL' => 'https://yoursite.com/callback'
+    ]);
+  filename: payment-integration.php
   ---
 
-  ```ts [nuxt.config.ts]
-  export default defineNuxtConfig({
-    modules: [
-      '@nuxt/ui',
-      '@nuxt/content',
-      'nuxt-og-image',
-      'nuxt-llms'
-    ],
+  ```php [payment-integration.php]
+  <?php
+  // Initialize ARB Payment Gateway
+  $gateway = new ARBPaymentGateway([
+      'tranportal_id' => 'your_tranportal_id',
+      'resource_key' => 'your_resource_key',
+      'environment' => 'sandbox' // or 'production'
+  ]);
 
-    css: ['~/assets/css/main.css']
-  })
+  // Create payment token
+  $response = $gateway->createPaymentToken([
+      'amt' => '100.00',
+      'currency' => 'SAR',
+      'action' => '1',
+      'responseURL' => 'https://yoursite.com/callback'
+  ]);
   ```
   :::
 ::
 
 ::u-page-section{class="dark:bg-neutral-950"}
 #title
-Powered by Nuxt UI components
-
-#links
-  :::u-button
-  ---
-  color: neutral
-  size: lg
-  target: _blank
-  to: https://ui.nuxt.com/docs/getting-started/installation/nuxt
-  trailingIcon: i-lucide-arrow-right
-  variant: subtle
-  ---
-  Explore Nuxt UI
-  :::
+Integration Methods
 
 #features
   :::u-page-feature
   ---
-  icon: i-lucide-palette
+  icon: i-lucide-credit-card
   ---
   #title
-  100+ UI Components
+  Bank Hosted Integration
 
   #description
-  Access the complete Nuxt UI component library. From badges to modals, everything styled and accessible out of the box.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-type
-  ---
-  #title
-  Beautiful Typography
-
-  #description
-  Pre-styled prose components with perfect visual harmony. No need for @tailwindcss/typography - get precise control over every element.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-layers
-  ---
-  #title
-  Rich Prose Components
-
-  #description
-  Accordions, cards, callouts, tabs, steps, code blocks, and more - all provided by Nuxt UI for interactive documentation.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-search
-  ---
-  #title
-  Built-in Search
-
-  #description
-  Full-text search with ContentSearch component. No need for Algolia - instant, relevant results with keyboard shortcuts (⌘K).
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-navigation
-  ---
-  #title
-  Smart Navigation
-
-  #description
-  Auto-generated navigation with ContentNavigation and ContentToc components. Sticky table of contents and prev/next links.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-moon
-  ---
-  #title
-  Dark Mode Ready
-
-  #description
-  Automatic theme switching with smooth transitions. Respects system preferences and remembers user choice.
-  :::
-::
-
-::u-page-section{class="dark:bg-neutral-950"}
-#title
-Enhanced with Nuxt Content
-
-#links
-  :::u-button
-  ---
-  color: neutral
-  size: lg
-  target: _blank
-  to: https://content.nuxt.com/docs/getting-started/installation
-  trailingIcon: i-lucide-arrow-right
-  variant: subtle
-  ---
-  Explore Nuxt Content
-  :::
-
-#features
-  :::u-page-feature
-  ---
-  icon: i-simple-icons-markdown
-  ---
-  #title
-  MDC Enhanced Markdown
-
-  #description
-  Write in Markdown while embedding Vue components. Seamlessly integrate interactive elements in your content.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-file-text
-  ---
-  #title
-  File-based Routing
-
-  #description
-  Organize content in folders and files. Your documentation structure automatically becomes your navigation.
+  Secure payment processing where customers enter payment details on Al Rajhi Bank's hosted payment page. Ideal for quick implementation with maximum security.
   :::
 
   :::u-page-feature
@@ -201,43 +101,116 @@ Enhanced with Nuxt Content
   icon: i-lucide-code
   ---
   #title
-  Syntax Highlighting
+  Merchant Hosted Integration
 
   #description
-  Beautiful code blocks with language detection, line numbers, and copy buttons. Support for 100+ languages.
+  Complete control over the payment experience with custom forms. Process payments directly through your application with 3D Secure support.
   :::
 
   :::u-page-feature
   ---
-  icon: i-lucide-database
+  icon: i-lucide-smartphone
   ---
   #title
-  Content Database
+  Mobile & Digital Wallets
 
   #description
-  Query your content with a MongoDB-like API. Filter, sort, and search through your documentation programmatically.
+  Support for Apple Pay, URPAY, and other digital wallet solutions. Seamless mobile payment experience for your customers.
   :::
 
   :::u-page-feature
   ---
-  icon: i-lucide-file-code
+  icon: i-lucide-refresh-cw
   ---
   #title
-  Frontmatter Support
+  Recurring Payments
 
   #description
-  Add metadata to your content files. Define SEO tags, navigation properties, and custom fields.
+  Automated subscription and recurring payment processing with card-on-file capabilities. Perfect for subscription-based businesses.
   :::
 
   :::u-page-feature
   ---
-  icon: i-lucide-git-branch
+  icon: i-lucide-shield-check
   ---
   #title
-  Version Control
+  PCI-DSS Compliant
 
   #description
-  Content lives in your repository. Branch, review, and deploy documentation alongside your code.
+  Industry-standard security with PCI-DSS compliance. Secure encryption and tokenization protect sensitive payment data.
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-globe
+  ---
+  #title
+  Multi-Currency Support
+
+  #description
+  Process payments in multiple currencies with real-time exchange rates. Support for SAR and international currencies.
+  :::
+::
+
+::u-page-section{class="dark:bg-neutral-950"}
+#title
+Comprehensive PHP Examples
+
+#links
+  :::u-button
+  ---
+  color: neutral
+  size: lg
+  to: /transaction-flow/encryption-samples
+  trailingIcon: i-lucide-arrow-right
+  variant: subtle
+  ---
+  View Code Examples
+  :::
+
+#features
+  :::u-page-feature
+  ---
+  icon: i-simple-icons-php
+  ---
+  #title
+  Complete PHP SDK
+
+  #description
+  Ready-to-use PHP classes and methods for all payment operations. Includes encryption, decryption, and API communication.
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-key
+  ---
+  #title
+  Encryption & Security
+
+  #description
+  Built-in encryption and decryption methods using your Resource Key. Secure data transmission with industry-standard algorithms.
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-bug
+  ---
+  #title
+  Error Handling
+
+  #description
+  Comprehensive error handling with detailed error codes and descriptions. Debug integration issues quickly and efficiently.
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-test-tube
+  ---
+  #title
+  Testing Tools
+
+  #description
+  Sandbox environment with test card numbers and credentials. Validate your integration before going live.
   :::
 ::
 
@@ -245,16 +218,15 @@ Enhanced with Nuxt Content
   :::u-page-c-t-a
   ---
   links:
-    - label: Start building
-      to: '/getting-started'
+    - label: Start Integration
+      to: '/introduction'
       trailingIcon: i-lucide-arrow-right
-    - label: View on GitHub
-      to: 'https://github.com/nuxt-ui-templates/docs'
-      target: _blank
+    - label: Download PHP SDK
+      to: '/transaction-flow/encryption-samples'
       variant: subtle
-      icon: i-simple-icons-github
-  title: Ready to build an amazing documentation?
-  description: Join thousands of developers building with Nuxt and Nuxt UI. Get this template and start shipping today.
+      icon: i-lucide-download
+  title: Ready to integrate Al Rajhi Bank Payment Gateway?
+  description: Join thousands of merchants processing secure payments with Al Rajhi Bank. Get started with our comprehensive documentation and PHP examples.
   class: dark:bg-neutral-950
   ---
 

@@ -51,14 +51,21 @@ export default defineNuxtConfig({
   },
 
   llms: {
-    domain: 'https://docs-template.nuxt.dev/',
-    title: 'Nuxt Docs Template',
-    description: 'A template for building documentation with Nuxt UI and Nuxt Content.',
+    domain: 'https://arb-payment-gateway-docs.com/',
+    title: 'Al Rajhi Bank Payment Gateway Documentation',
+    description: 'Comprehensive REST API integration guide for Al Rajhi Bank Payment Gateway with PHP examples and implementation details.',
     full: {
-      title: 'Nuxt Docs Template - Full Documentation',
-      description: 'This is the full documentation for the Nuxt Docs Template.'
+      title: 'Al Rajhi Bank Payment Gateway - Complete API Documentation',
+      description: 'Complete REST API integration documentation for Al Rajhi Bank Payment Gateway including PHP code examples, transaction flows, and troubleshooting guides.'
     },
     sections: [
+      {
+        title: 'Introduction',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/introduction%' }
+        ]
+      },
       {
         title: 'Getting Started',
         contentCollection: 'docs',
@@ -67,10 +74,17 @@ export default defineNuxtConfig({
         ]
       },
       {
-        title: 'Essentials',
+        title: 'Transaction Flow',
         contentCollection: 'docs',
         contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/essentials%' }
+          { field: 'path', operator: 'LIKE', value: '/transaction-flow%' }
+        ]
+      },
+      {
+        title: 'Troubleshooting',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/troubleshooting%' }
         ]
       }
     ]

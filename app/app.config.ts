@@ -1,7 +1,7 @@
 export default defineAppConfig({
   ui: {
     colors: {
-      primary: 'green',
+      primary: 'blue',
       neutral: 'slate'
     },
     footer: {
@@ -12,60 +12,58 @@ export default defineAppConfig({
     }
   },
   seo: {
-    siteName: 'Nuxt Docs Template'
+    siteName: 'Al Rajhi Bank Payment Gateway Documentation'
   },
   header: {
-    title: '',
+    title: 'Payment Gateway Documentation',
     to: '/',
     logo: {
-      alt: '',
-      light: '',
-      dark: ''
+      alt: 'Al Rajhi Bank',
+      light: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Al_Rajhi_Bank_Logo.svg/1200px-Al_Rajhi_Bank_Logo.svg.png',
+      dark: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Al_Rajhi_Bank_Logo.svg/1200px-Al_Rajhi_Bank_Logo.svg.png'
     },
     search: true,
     colorMode: true,
     links: [{
-      'icon': 'i-simple-icons-github',
-      'to': 'https://github.com/nuxt-ui-templates/docs',
+      'icon': 'i-lucide-external-link',
+      'to': 'https://www.alrajhibank.com.sa',
       'target': '_blank',
-      'aria-label': 'GitHub'
+      'aria-label': 'Al Rajhi Bank'
     }]
   },
   footer: {
-    credits: `Built with Nuxt UI • © ${new Date().getFullYear()}`,
+    credits: `© ${new Date().getFullYear()} Al Rajhi Bank. All rights reserved.`,
     colorMode: false,
     links: [{
-      'icon': 'i-simple-icons-discord',
-      'to': 'https://go.nuxt.com/discord',
+      'icon': 'i-lucide-globe',
+      'to': 'https://www.alrajhibank.com.sa',
       'target': '_blank',
-      'aria-label': 'Nuxt on Discord'
+      'aria-label': 'Al Rajhi Bank Website'
     }, {
-      'icon': 'i-simple-icons-x',
-      'to': 'https://go.nuxt.com/x',
-      'target': '_blank',
-      'aria-label': 'Nuxt on X'
+      'icon': 'i-lucide-phone',
+      'to': 'tel:920003344',
+      'aria-label': 'Contact Support'
     }, {
-      'icon': 'i-simple-icons-github',
-      'to': 'https://github.com/nuxt/ui',
-      'target': '_blank',
-      'aria-label': 'Nuxt UI on GitHub'
+      'icon': 'i-lucide-mail',
+      'to': 'mailto:support@alrajhibank.com.sa',
+      'aria-label': 'Email Support'
     }]
   },
   toc: {
     title: 'Table of Contents',
     bottom: {
-      title: 'Community',
-      edit: 'https://github.com/nuxt-ui-templates/docs/edit/main/content',
+      title: 'Support',
+      edit: false,
       links: [{
-        icon: 'i-lucide-star',
-        label: 'Star on GitHub',
-        to: 'https://github.com/nuxt/ui',
+        icon: 'i-lucide-life-buoy',
+        label: 'Technical Support',
+        to: 'mailto:support@alrajhibank.com.sa',
         target: '_blank'
       }, {
         icon: 'i-lucide-book-open',
-        label: 'Nuxt UI docs',
-        to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
-        target: '_blank'
+        label: 'API Documentation',
+        to: '/getting-started',
+        target: '_self'
       }]
     }
   }
