@@ -4,7 +4,9 @@ export default defineContentConfig({
   collections: {
     landing: defineCollection({
       type: 'page',
-      source: 'index.md'
+      source: {
+        include: 'index.md'
+      }
     }),
     docs: defineCollection({
       type: 'page',
