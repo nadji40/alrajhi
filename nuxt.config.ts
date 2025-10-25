@@ -31,11 +31,10 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2024-07-11',
 
-  ssr: false,
+  ssr: true,
   
   nitro: {
-    prerender: false,
-    preset: 'node-server'
+    preset: 'vercel'
   },
 
   eslint: {
