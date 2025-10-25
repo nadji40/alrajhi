@@ -27,9 +27,12 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2024-07-11',
 
+  ssr: true,
+  
   nitro: {
     prerender: {
-      routes: []
+      routes: ['/'],
+      crawlLinks: false
     }
   },
 
@@ -44,6 +47,10 @@ export default defineNuxtConfig({
 
   icon: {
     provider: 'iconify'
+  },
+
+  build: {
+    transpile: ['mermaid']
   },
 
   llms: {
