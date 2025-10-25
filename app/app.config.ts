@@ -9,6 +9,13 @@ export default defineAppConfig({
         root: 'border-t border-default',
         left: 'text-sm text-muted'
       }
+    },
+    prose: {
+      code: {
+        mermaid: {
+          component: 'ProseCodeMermaid'
+        }
+      }
     }
   },
   seo: {

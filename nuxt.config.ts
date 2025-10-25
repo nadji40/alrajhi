@@ -33,7 +33,6 @@ export default defineNuxtConfig({
     }
   },
 
-
   eslint: {
     config: {
       stylistic: {
@@ -58,28 +57,28 @@ export default defineNuxtConfig({
     sections: [
       {
         title: 'Introduction',
-        contentCollection: 'docs',
+        contentCollection: 'content',
         contentFilters: [
           { field: 'path', operator: 'LIKE', value: '/introduction%' }
         ]
       },
       {
         title: 'Getting Started',
-        contentCollection: 'docs',
+        contentCollection: 'content',
         contentFilters: [
           { field: 'path', operator: 'LIKE', value: '/getting-started%' }
         ]
       },
       {
         title: 'Transaction Flow',
-        contentCollection: 'docs',
+        contentCollection: 'content',
         contentFilters: [
           { field: 'path', operator: 'LIKE', value: '/transaction-flow%' }
         ]
       },
       {
         title: 'Troubleshooting',
-        contentCollection: 'docs',
+        contentCollection: 'content',
         contentFilters: [
           { field: 'path', operator: 'LIKE', value: '/troubleshooting%' }
         ]
