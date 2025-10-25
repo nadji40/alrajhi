@@ -1,5 +1,20 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData('index', () => queryCollection('landing').path('/').first())
+// Try direct content query first
+const { data: page } = await useAsyncData('index', async () => {
+  try {
+    // Try collection query first
+    const collectionPage = await queryCollection('landing').path('/').first()
+    if (collectionPage) return collectionPage
+
+    // Fallback to direct content query
+    return await queryContent('index').findOne()
+  } catch (error) {
+    console.error('Page query failed:', error)
+    // Return null to trigger 404
+    return null
+  }
+})
+
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
