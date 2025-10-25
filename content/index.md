@@ -1,4 +1,6 @@
 ---
+title: Al Rajhi Bank Payment Gateway Documentation
+description: Comprehensive REST API integration guide for Al Rajhi Bank Payment Gateway with examples in PHP, JavaScript, cURL and implementation details.
 seo:
   title: Al Rajhi Bank Payment Gateway Documentation
   description: Comprehensive REST API integration guide for Al Rajhi Bank Payment Gateway with examples in PHP, JavaScript, cURL and implementation details.
@@ -52,7 +54,7 @@ Complete REST API integration guide for Al Rajhi Bank Payment Gateway. Build sec
           "id" => "YOUR_TRANPORTAL_ID",
           "currencyCode" => "682",  // SAR
           "trackId" => "ORDER_" . time(),
-          "responseURL" => "https://yoursite.com/callback.php"
+          "responseURL" => "https://yourdomain/callback.php"
       ];
 
       // Step 2: Encrypt using AES-256-CBC with IV "PGKEYENCDECIVSPC"
@@ -62,7 +64,7 @@ Complete REST API integration guide for Al Rajhi Bank Payment Gateway. Build sec
       $request = [
           "id" => "YOUR_TRANPORTAL_ID",
           "trandata" => $encrypted,
-          "responseURL" => "https://yoursite.com/callback.php"
+          "responseURL" => "https://yourdomain/callback.php"
       ];
       ```
 
@@ -77,7 +79,7 @@ Complete REST API integration guide for Al Rajhi Bank Payment Gateway. Build sec
           id: "YOUR_TRANPORTAL_ID",
           currencyCode: "682",  // SAR
           trackId: "ORDER_" + Date.now(),
-          responseURL: "https://yoursite.com/callback"
+          responseURL: "https://yourdomain/callback"
       };
 
       // Step 2: Encrypt using AES-256-CBC with IV "PGKEYENCDECIVSPC"
@@ -87,7 +89,7 @@ Complete REST API integration guide for Al Rajhi Bank Payment Gateway. Build sec
       const request = {
           id: "YOUR_TRANPORTAL_ID",
           trandata: encrypted,
-          responseURL: "https://yoursite.com/callback"
+          responseURL: "https://yourdomain/callback"
       };
       ```
 
@@ -102,8 +104,8 @@ Complete REST API integration guide for Al Rajhi Bank Payment Gateway. Build sec
         -d '{
           "id": "YOUR_TRANPORTAL_ID",
           "trandata": "ENCRYPTED_TRANSACTION_DATA",
-          "responseURL": "https://yoursite.com/callback",
-          "errorURL": "https://yoursite.com/callback"
+          "responseURL": "https://yourdomain/callback",
+          "errorURL": "https://yourdomain/callback"
         }'
       ```
       :::

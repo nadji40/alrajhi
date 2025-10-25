@@ -22,8 +22,7 @@ export default defineNuxtConfig({
           searchDepth: 1
         }
       }
-    },
-    documentDriven: true
+    }
   },
 
   compatibilityDate: '2024-07-11',
