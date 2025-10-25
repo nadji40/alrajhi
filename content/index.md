@@ -1,7 +1,7 @@
 ---
 seo:
   title: Al Rajhi Bank Payment Gateway Documentation
-  description: Comprehensive REST API integration guide for Al Rajhi Bank Payment Gateway with PHP examples and implementation details.
+  description: Comprehensive REST API integration guide for Al Rajhi Bank Payment Gateway with examples in PHP, JavaScript, cURL and implementation details.
 ---
 
 ::u-page-hero{class="dark:bg-gradient-to-b from-neutral-900 to-neutral-950"}
@@ -15,7 +15,7 @@ orientation: horizontal
 Al Rajhi Bank [Payment Gateway]{.text-primary} Documentation
 
 #description
-Complete REST API integration guide for Al Rajhi Bank Payment Gateway. Build secure, PCI-DSS compliant payment solutions with comprehensive PHP examples, detailed transaction flows, and professional implementation guidance.
+Complete REST API integration guide for Al Rajhi Bank Payment Gateway. Build secure, PCI-DSS compliant payment solutions with examples in PHP, JavaScript, cURL, detailed transaction flows, and professional implementation guidance for any programming language.
 
 #links
   :::u-button
@@ -39,38 +39,10 @@ Complete REST API integration guide for Al Rajhi Bank Payment Gateway. Build sec
   :::
 
 #default
-      :::prose-pre
-      ---
-      code: |
-        <?php
-        // ARB Payment Gateway Integration (Real Example)
-        
-        // Step 1: Prepare transaction data
-        $trandata = [
-            "amt" => "100.00",
-            "action" => "1",  // Purchase
-            "password" => "YOUR_TRANPORTAL_PASSWORD",
-            "id" => "YOUR_TRANPORTAL_ID",
-            "currencyCode" => "682",  // SAR
-            "trackId" => "ORDER_" . time(),
-            "responseURL" => "https://yoursite.com/callback.php"
-        ];
-
-        // Step 2: Encrypt using AES-256-CBC
-        $encrypted = arbEncrypt($trandata, "YOUR_RESOURCE_KEY");
-
-        // Step 3: Send to ARB Payment Gateway
-        $request = [
-            "id" => "YOUR_TRANPORTAL_ID",
-            "trandata" => $encrypted,
-            "responseURL" => "https://yoursite.com/callback.php"
-        ];
-      filename: arb-integration.php
-      ---
-
-      ```php [arb-integration.php]
+      :::u-code-group
+      ```php [PHP]
       <?php
-      // ARB Payment Gateway Integration (Real Example)
+      // ARB Payment Gateway Integration
       
       // Step 1: Prepare transaction data
       $trandata = [
@@ -83,7 +55,7 @@ Complete REST API integration guide for Al Rajhi Bank Payment Gateway. Build sec
           "responseURL" => "https://yoursite.com/callback.php"
       ];
 
-      // Step 2: Encrypt using AES-256-CBC
+      // Step 2: Encrypt using AES-256-CBC with IV "PGKEYENCDECIVSPC"
       $encrypted = arbEncrypt($trandata, "YOUR_RESOURCE_KEY");
 
       // Step 3: Send to ARB Payment Gateway
@@ -93,8 +65,48 @@ Complete REST API integration guide for Al Rajhi Bank Payment Gateway. Build sec
           "responseURL" => "https://yoursite.com/callback.php"
       ];
       ```
-  ```
-  :::
+
+      ```javascript [JavaScript]
+      // ARB Payment Gateway Integration
+      
+      // Step 1: Prepare transaction data
+      const trandata = {
+          amt: "100.00",
+          action: "1",  // Purchase
+          password: "YOUR_TRANPORTAL_PASSWORD",
+          id: "YOUR_TRANPORTAL_ID",
+          currencyCode: "682",  // SAR
+          trackId: "ORDER_" + Date.now(),
+          responseURL: "https://yoursite.com/callback"
+      };
+
+      // Step 2: Encrypt using AES-256-CBC with IV "PGKEYENCDECIVSPC"
+      const encrypted = await arbEncrypt(trandata, "YOUR_RESOURCE_KEY");
+
+      // Step 3: Send to ARB Payment Gateway
+      const request = {
+          id: "YOUR_TRANPORTAL_ID",
+          trandata: encrypted,
+          responseURL: "https://yoursite.com/callback"
+      };
+      ```
+
+      ```bash [cURL]
+      # ARB Payment Gateway Integration
+      
+      # Step 1: Prepare and encrypt transaction data (done separately)
+      # Step 2: Send to ARB Payment Gateway
+      
+      curl -X POST "YOUR_ENDPOINT_URL" \
+        -H "Content-Type: application/json" \
+        -d '{
+          "id": "YOUR_TRANPORTAL_ID",
+          "trandata": "ENCRYPTED_TRANSACTION_DATA",
+          "responseURL": "https://yoursite.com/callback",
+          "errorURL": "https://yoursite.com/callback"
+        }'
+      ```
+      :::
 ::
 
 ::u-page-section{class="dark:bg-neutral-950"}

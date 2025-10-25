@@ -22,7 +22,8 @@ export default defineNuxtConfig({
           searchDepth: 1
         }
       }
-    }
+    },
+    documentDriven: true
   },
 
   compatibilityDate: '2024-07-11',
@@ -42,12 +43,12 @@ export default defineNuxtConfig({
   },
 
   llms: {
-    domain: 'https://arb-payment-gateway-docs.com/',
+    domain: 'https://alrajhi.vercel.app/',
     title: 'Al Rajhi Bank Payment Gateway Documentation',
-    description: 'Comprehensive REST API integration guide for Al Rajhi Bank Payment Gateway with PHP examples and implementation details.',
+    description: 'Comprehensive REST API integration guide for Al Rajhi Bank Payment Gateway with examples in PHP, JavaScript, cURL and implementation details for any programming language.',
     full: {
       title: 'Al Rajhi Bank Payment Gateway - Complete API Documentation',
-      description: 'Complete REST API integration documentation for Al Rajhi Bank Payment Gateway including PHP code examples, transaction flows, and troubleshooting guides.'
+      description: 'Complete REST API integration documentation for Al Rajhi Bank Payment Gateway including code examples in PHP, JavaScript, cURL, transaction flows, and troubleshooting guides for any programming language.'
     },
     sections: [
       {

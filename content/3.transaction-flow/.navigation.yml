@@ -1,2 +1,13 @@
 title: Transaction Flow
 icon: i-lucide-workflow
+children:
+  - title: Overview
+    to: /transaction-flow
+  - title: Bank Hosted Integration
+    to: /transaction-flow/bank-hosted-integration
+  - title: Merchant Hosted Integration
+    to: /transaction-flow/merchant-hosted
+  - title: URPAY Integration
+    to: /transaction-flow/urpay-integration
+  - title: Code Examples & Encryption
+    to: /transaction-flow/encryption-samples
