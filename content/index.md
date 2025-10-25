@@ -186,16 +186,6 @@ Comprehensive PHP Examples
   :::
 
 #features
-  :::u-page-feature
-  ---
-  icon: i-simple-icons-php
-  ---
-  #title
-  Complete PHP SDK
-
-  #description
-  Ready-to-use PHP classes and methods for all payment operations. Includes encryption, decryption, and API communication.
-  :::
 
   :::u-page-feature
   ---
@@ -238,11 +228,7 @@ Comprehensive PHP Examples
     - label: Start Integration
       to: '/introduction'
       trailingIcon: i-lucide-arrow-right
-    - label: Download PHP SDK
-      to: '/transaction-flow/encryption-samples'
-      variant: subtle
-      icon: i-lucide-download
-  title: Ready to integrate Al Rajhi Bank Payment Gateway?
+Rajhi Bank Payment Gateway?
   description: Join thousands of merchants processing secure payments with Al Rajhi Bank. Get started with our comprehensive documentation and PHP examples.
   class: dark:bg-neutral-950
   ---
