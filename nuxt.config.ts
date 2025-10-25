@@ -30,10 +30,7 @@ export default defineNuxtConfig({
   ssr: true,
   
   nitro: {
-    prerender: {
-      routes: ['/'],
-      crawlLinks: false
-    }
+    prerender: false
   },
 
   eslint: {

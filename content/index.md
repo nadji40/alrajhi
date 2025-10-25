@@ -242,7 +242,12 @@ Comprehensive PHP Examples
     - label: Start Integration
       to: '/introduction'
       trailingIcon: i-lucide-arrow-right
-Rajhi Bank Payment Gateway?
+    - label: View on GitHub
+      to: 'https://github.com/alrajhi/payment-gateway-docs'
+      target: _blank
+      variant: subtle
+      icon: i-simple-icons-github
+  title: Ready to integrate Al Rajhi Bank Payment Gateway?
   description: Join thousands of merchants processing secure payments with Al Rajhi Bank. Get started with our comprehensive documentation and PHP examples.
   class: dark:bg-neutral-950
   ---
