@@ -9,6 +9,10 @@ export default defineNuxtConfig({
     'nuxt-llms'
   ],
 
+  experimental: {
+    payloadExtraction: false
+  },
+
   devtools: {
     enabled: true
   },
@@ -27,10 +31,11 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2024-07-11',
 
-  ssr: true,
+  ssr: false,
   
   nitro: {
-    prerender: false
+    prerender: false,
+    preset: 'node-server'
   },
 
   eslint: {

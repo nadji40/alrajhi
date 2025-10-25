@@ -1,0 +1,12 @@
+{
+  "buildCommand": "pnpm run build",
+  "outputDirectory": ".output/public",
+  "devCommand": "pnpm run dev",
+  "installCommand": "pnpm install --no-frozen-lockfile",
+  "framework": "nuxtjs",
+  "functions": {
+    "app/server/index.mjs": {
+      "maxDuration": 30
+    }
+  }
+}
