@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const { seo } = useAppConfig()
 
-const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation())
-const { data: files } = useLazyAsyncData('search', () => queryContent().find(), {
+const { data: navigation } = await useAsyncData('navigation', () => fetchContentNavigation().catch(() => []))
+const { data: files } = useLazyAsyncData('search', () => queryContent().find().catch(() => []), {
   server: false
 })
 
