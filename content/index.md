@@ -22,7 +22,7 @@ Complete REST API integration guide for Al Rajhi Bank Payment Gateway. Build sec
   ---
   to: /introduction
   size: xl
-  trailing-icon: i-lucide-arrow-right
+  trailingIcon: i-lucide-arrow-right
   ---
   Get Started
   :::
